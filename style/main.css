@@ -1,0 +1,299 @@
+@import url('./normalize.css');
+
+:root {
+  --1-color: #394D4C;
+  --2-color: #879A98;
+  --3-color: #93443F;
+  --4-color: #969F5E;
+  --5-color: #B68686;
+  --6-color: #112222;
+
+  --1-ff: Helvetica, Arial, sans-serif;
+  --2-ff: "Courier New", Courier, monospace;
+  --3-ff: Georgia, "Times New Roman", Times, serif;
+}
+
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  outline: 1px solid palevioletred;
+}
+
+
+#some-app-body {
+  background-color: var(--2-color);
+  font-family: var(--1-ff);
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 800px;
+  min-width: 280px;
+  margin: auto;
+  background-color: var(--1-color);
+}
+
+
+.header {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  min-height: 48px;
+}
+
+
+.hm8 {
+  margin: 0 8px;
+}
+.hm16 {
+  margin: 0 16px;
+}
+
+
+.slider-button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  color: var(--1-color);
+  background-color: var(--2-color);
+}
+
+.slider {
+  height: 40px;
+  width: 160px;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  border-radius: 8px;
+}
+.slider__slides-row {
+  display: flex;
+}
+.slider__slide {
+  width: 160px;
+  height: 40px;
+  margin-right: 16px;
+}
+
+
+.slide{
+  
+}
+.slide__button {
+  width: inherit;
+  height: inherit;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  color: var(--1-color);
+  background-color: var(--2-color);
+}
+
+
+.main {
+  padding: 8px;
+  flex-grow: 1;
+}
+
+
+.feat-container {
+  width: 100%;
+}
+
+
+.slider2 {
+  min-height: 80px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  border-radius: 8px;
+  /* в последствии можно убрать строку ниже */
+  margin-bottom: 8px;
+}
+.slider2__slides-row {
+  display: flex;
+}
+.slider2__slide {
+  flex-shrink: 0;
+  margin-right: 16px;
+}
+
+
+.slide2{
+  width: calc(100vw - 16px);
+  min-height: 80px;
+  background-color: var(--2-color);
+}
+@media screen and (min-width: 800px) {
+  .slide2 {
+    width: 784px;
+  }
+}
+
+
+.notes {
+  padding: 8px;
+}
+.notes__list {
+  padding: 0px;
+  margin: 0 0 16px;
+  list-style: none;
+}
+.notes__item {
+  margin: 0 0 16px;
+}
+.notes__item-label {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;
+}
+.notes__item-input {
+  margin-right: 8px;
+}
+.notes__btns {
+
+}
+.notes__btn {
+  margin: 0 16px 0 0;
+  padding: 4px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--5-color);
+  color: var(--1-color);
+}
+
+
+.note {
+  padding: 8px;
+}
+.note__text {
+  margin: 0 0 16px;
+  padding: 4px;
+  border: 1px dotted var(--1-color);
+  color: var(--6-color);
+}
+.note__btns {
+
+}
+.note__btn {
+  margin: 0 16px 0 0;
+  padding: 4px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--5-color);
+  color: var(--1-color);
+}
+
+
+.todos {
+  padding: 8px;
+}
+.todos__list {
+  padding: 0;
+  margin: 0 0 16px;
+  list-style: none;
+}
+.todos__item {
+  margin: 0 0 16px;
+}
+.todos__to-done-btn {
+  margin: 0 16px 0 0;
+  padding: 4px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--5-color);
+  color: var(--1-color);
+}
+.todos__to-actual-btn {
+  margin: 0 16px 0 0;
+  padding: 4px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--5-color);
+  color: var(--1-color);
+}
+
+
+.todo {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+.todo__checkbox-container {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  padding: 4px;
+  text-align: center;
+  background-color: var(--4-color);
+  color: var(--1-color);
+  border: none;
+  border-radius: 4px;
+}
+.todo__checkbox {
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  display: none;
+}
+.todo__checkbox-span {
+  text-align: center;
+}
+.todo__text {
+  margin: 0 8px;
+  flex-grow: 1;
+  color: var(--6-color);
+}
+.todo__done-btn {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  padding: 4px;
+  text-align: center;
+  background-color: var(--4-color);
+  color: var(--1-color);
+  border: none;
+  border-radius: 4px;
+}
+
+
+.footer {
+  padding: 8px;
+}
+
+
+.adress-container {
+  display: flex;
+  justify-content: space-between;
+  /* width: 100%; */
+  color: var(--2-color);
+  font-size: 12px;
+}
+
+
+.author-common {
+  /* width: 40%; */
+}
+.author-common__item {
+  
+}
+
+
+.author-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.author-links__link {
+  color: var(--2-color);
+  text-decoration: none;
+}
