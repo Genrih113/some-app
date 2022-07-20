@@ -28,6 +28,7 @@
     <main class="main">
       <section class="feat-container">
 
+        <!--внедрение фичи блокнота-->
         <div class="slider2"><!--Слайдер экранов конкретной фичи-->
           <div class="slider2__slides-row">
             <div class="slider2__slide slide2">
@@ -36,26 +37,26 @@
                   <li class="notes__item">
                     <label class="notes__item-label">
                       <input class="notes__item-input" type="radio" name="note">
-                      <span>Note 1</span>
+                      <span class="notes__item-span">Note 1</span>
                     </label>
                   </li>
                   <li class="notes__item">
                     <label class="notes__item-label">
                       <input class="notes__item-input" type="radio" name="note">
-                      <span>Note 1</span>
+                      <span class="notes__item-span">Note 1</span>
                     </label>
                   </li>
                   <li class="notes__item">
                     <label class="notes__item-label">
                       <input class="notes__item-input" type="radio" name="note">
-                      <span>Note 1</span>
+                      <span class="notes__item-span">Note 1</span>
                     </label>
                   </li>
                 </ul>
                 <div class="notes__btns">
-                  <button class="notes__btn">New</button>
-                  <button class="notes__btn">Open</button>
-                  <button class="notes__btn">Remove</button>
+                  <button class="btn-m notes__btn">New</button>
+                  <button class="btn-m notes__btn">Open</button>
+                  <button class="btn-m notes__btn">Remove</button>
                 </div>
               </div>
             </div>
@@ -64,14 +65,43 @@
               <div class="note">
                 <div class="note__text">figaro</div>
                 <div class="note__btns">
-                  <button class="note__btn">Save</button>
-                  <button class="note__btn">Cancel</button>
+                  <button class="btn-m note__btn">Save</button>
+                  <button class="btn-m note__btn">Cancel</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
+        <div class="popup d-none" id="popup-confirmation-notes">
+          <div class="popup__banner">
+            <h2 class="popup__title">
+              Вы уверены?
+            </h2>
+            <div>
+              <button class="btn-m">Да</button>
+              <button class="btn-m">Нет</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="popup d-none" id="popup-create-notes">
+          <div class="popup__banner">
+            <h2 class="popup__title">
+              Введите название записи
+            </h2>
+            <form action="" class="popup__form">
+              <input type="text" class="popup__input">
+              <div>
+                <button class="btn-m" type="submit">Создать</button>
+                <button class="btn-m" type="button">Отмена</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!--конец внедрения фичи блокнота-->
+
+        <!--внедрение фичи списка дел-->
         <div class="slider2"><!--Слайдер экранов конкретной фичи-->
           <div class="slider2__slides-row">
             <div class="slider2__slide slide2">
@@ -88,15 +118,15 @@
                   <li class="todos__item todo">
                     <label class="todo__checkbox-container">
                       <input class="todo__checkbox" type="checkbox">
-                      <span class="todo__checkbox-span"></span>
+                      <span class="todo__checkbox-span">V</span>
                     </label>
                     <span class="todo__text">ToDo 1</span>
                     <button class="todo__done-btn">X</button>
                   </li>
                 </ul>
                 <div>
-                  <button class="todos__to-done-btn">Добавить</button>
-                  <button class="todos__to-done-btn">Завершенные</button>
+                  <button class="btn-m todos__to-done-btn">Добавить</button>
+                  <button class="btn-m todos__to-done-btn">Завершенные</button>
                 </div>
               </div>
             </div>
@@ -120,11 +150,26 @@
                     <button class="todo__done-btn">X</button>
                   </li>
                 </ul>
-                <button class="todos__to-actual-btn">Актуальные</button>
+                <div>
+                  <button class="btn-m todos__to-actual-btn">Актуальные</button>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
+        <div class="popup d-none" id="popup-confirmation-todos">
+          <div class="popup__banner">
+            <h2 class="popup__title">
+              Вы уверены?
+            </h2>
+            <div>
+              <button class="btn-m">Да</button>
+              <button class="btn-m">Нет</button>
+            </div>
+          </div>
+        </div>
+        <!--конец внедрение фичи списка дел-->
 
       </section>
     </main>
@@ -151,5 +196,6 @@
     </footer>
 
   </div>
+
 </body>
 </html>
