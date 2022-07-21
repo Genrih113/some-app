@@ -34,70 +34,67 @@
             <div class="feat-slider__slide feat-slide">
               <div class="notes">
                 <ul class="notes__list">
-                  <li class="notes__item">
+                  <!-- <li class="notes__item">
                     <label class="notes__item-label">
-                      <input class="notes__item-input" type="radio" name="note">
+                      <input class="notes__item-input" type="radio" name="note" value="Note1">
                       <span class="notes__item-span">Note 1</span>
                     </label>
-                  </li>
-                  <li class="notes__item">
-                    <label class="notes__item-label">
-                      <input class="notes__item-input" type="radio" name="note">
-                      <span class="notes__item-span">Note 1</span>
-                    </label>
-                  </li>
-                  <li class="notes__item">
-                    <label class="notes__item-label">
-                      <input class="notes__item-input" type="radio" name="note">
-                      <span class="notes__item-span">Note 1</span>
-                    </label>
-                  </li>
+                  </li> -->
                 </ul>
                 <div class="notes__btns">
-                  <button class="btn-m notes__btn">New</button>
-                  <button class="btn-m notes__btn">Open</button>
-                  <button class="btn-m notes__btn">Remove</button>
+                  <button id="notes-new" class="btn-m notes__btn">New</button>
+                  <button id="notes-open" class="btn-m notes__btn">Open</button>
+                  <button id="notes-remove" class="btn-m notes__btn">Remove</button>
                 </div>
               </div>
             </div>
 
             <div class="feat-slider__slide feat-slide">
               <div class="note">
-                <div class="note__text">figaro</div>
+                <div class="note__text" contenteditable></div>
                 <div class="note__btns">
-                  <button class="btn-m note__btn">Save</button>
-                  <button class="btn-m note__btn">Cancel</button>
+                  <button id="note-save" class="btn-m note__btn">Save</button>
+                  <button id="note-cancel" class="btn-m note__btn">Cancel</button>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="popup d-none" id="popup-confirmation-notes">
-          <div class="popup__banner">
-            <h2 class="popup__title">
-              Вы уверены?
-            </h2>
-            <div>
-              <button class="btn-m">Да</button>
-              <button class="btn-m">Нет</button>
+          <div class="popup d-none" id="popup-confirmation-notes">
+            <div class="popup__banner">
+              <h2 class="popup__title">
+                Вы уверены?
+              </h2>
+              <div>
+                <button class="btn-m popup-btn-true">Да</button>
+                <button class="btn-m popup-btn-false">Нет</button>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="popup d-none" id="popup-create-notes">
-          <div class="popup__banner">
-            <h2 class="popup__title">
-              Введите название записи
-            </h2>
-            <form action="" class="popup__form">
-              <input type="text" class="popup__input">
-              <div>
-                <button class="btn-m" type="submit">Создать</button>
-                <button class="btn-m" type="button">Отмена</button>
-              </div>
-            </form>
+  
+          <div class="popup d-none" id="popup-create-note">
+            <div class="popup__banner">
+              <h2 class="popup__title">
+                Введите название записи
+              </h2>
+              <form action="" class="popup__form">
+                <input type="text" class="popup__input">
+                <div>
+                  <button class="btn-m popup-btn-true" type="submit">Создать</button>
+                  <button class="btn-m popup-btn-false" type="button">Отмена</button>
+                </div>
+              </form>
+            </div>
           </div>
+
+          <template id="template">
+            <li class="notes__item">
+              <label class="notes__item-label">
+                <input class="notes__item-input" type="radio" name="note" value="Note1">
+                <span class="notes__item-span">Note 1</span>
+              </label>
+            </li>
+          </template>
         </div>
         <!--конец внедрения фичи блокнота-->
 
