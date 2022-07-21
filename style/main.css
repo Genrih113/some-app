@@ -65,6 +65,9 @@
   color: var(--1-color);
   background-color: var(--2-color);
 }
+.slider-button_selected {
+  text-decoration: underline;
+}
 
 .slider {
   height: 40px;
@@ -76,6 +79,8 @@
 }
 .slider__slides-row {
   display: flex;
+  transform: translateX(0);
+  transition: transform 0.5s ease-in-out 0s;
 }
 .slider__slide {
   width: 160px;
@@ -106,10 +111,11 @@
 
 .feat-container {
   width: 100%;
+  min-height: 40px;
 }
 
 
-.slider2 {
+.feat-slider {
   min-height: 80px;
   width: 100%;
   position: relative;
@@ -117,24 +123,24 @@
   border: none;
   border-radius: 8px;
   /* в последствии можно убрать строку ниже */
-  margin-bottom: 8px;
+  /* margin-bottom: 8px; */
 }
-.slider2__slides-row {
+.feat-slider__slides-row {
   display: flex;
 }
-.slider2__slide {
+.feat-slider__slide {
   flex-shrink: 0;
   margin-right: 16px;
 }
 
 
-.slide2{
+.feat-slide{
   width: calc(100vw - 16px);
   min-height: 80px;
   background-color: var(--2-color);
 }
 @media screen and (min-width: 800px) {
-  .slide2 {
+  .feat-slide {
     width: 784px;
   }
 }

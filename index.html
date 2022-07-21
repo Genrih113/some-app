@@ -11,27 +11,27 @@
   <div class="container">
 
     <header class="header">
-      <button class="slider-button">&lt;</button>
+      <button id="slider-button-to-left" data-side="left" class="slider-button">&lt;</button>
       <div class="slider hm8">
         <nav class="slider__slides-row">
           <div class="slider__slide slide">
-            <button class="slide__button">Notes</button>
+            <button data-feat="notes" class="slide__button">Notes</button>
           </div>
           <div class="slider__slide slide">
-            <button class="slide__button">ToDos</button>
+            <button data-feat="todos" class="slide__button">ToDos</button>
           </div>
         </nav>
       </div>
-      <button class="slider-button">&gt;</button>
+      <button id="slider-button-to-right" data-side="right" class="slider-button">&gt;</button>
     </header>
 
     <main class="main">
       <section class="feat-container">
 
         <!--внедрение фичи блокнота-->
-        <div class="slider2"><!--Слайдер экранов конкретной фичи-->
-          <div class="slider2__slides-row">
-            <div class="slider2__slide slide2">
+        <div id="notes" class="feat-slider"><!--Слайдер экранов конкретной фичи-->
+          <div class="feat-slider__slides-row">
+            <div class="feat-slider__slide feat-slide">
               <div class="notes">
                 <ul class="notes__list">
                   <li class="notes__item">
@@ -61,7 +61,7 @@
               </div>
             </div>
 
-            <div class="slider2__slide slide2">
+            <div class="feat-slider__slide feat-slide">
               <div class="note">
                 <div class="note__text">figaro</div>
                 <div class="note__btns">
@@ -102,9 +102,9 @@
         <!--конец внедрения фичи блокнота-->
 
         <!--внедрение фичи списка дел-->
-        <div class="slider2"><!--Слайдер экранов конкретной фичи-->
-          <div class="slider2__slides-row">
-            <div class="slider2__slide slide2">
+        <div id="todos" class="feat-slider d-none"><!--Слайдер экранов конкретной фичи-->
+          <div class="feat-slider__slides-row">
+            <div class="feat-slider__slide feat-slide">
               <div class="todos">
                 <ul class="todos__list">
                   <li class="todos__item todo">
@@ -130,7 +130,7 @@
                 </div>
               </div>
             </div>
-            <div class="slider2__slide slide2">
+            <div class="feat-slider__slide feat-slide">
               <div class="todos">
                 <ul class="todos__list">
                   <li class="todos__item todo">
@@ -197,5 +197,7 @@
 
   </div>
 
+  <script src="./js/jquery-3.6.0.js"></script>
+  <script src="./js/main.js"></script>
 </body>
 </html>
