@@ -187,8 +187,8 @@ let $toDoneTodosBtn = $todosFeat.find('.todos__to-done-btn');
 let $toActualTodosBtn = $todosFeat.find('.todos__to-actual-btn');
 
 let $confirmTodoPopup = $todosFeat.find('#popup-confirmation-todos');
-let $confirmConfirmTodoBtn = $confirmTodoPopup.find('popup-btn-true');
-let $cancelConfirmTodoBtn = $confirmTodoPopup.find('popup-btn-false');
+let $confirmConfirmTodoBtn = $confirmTodoPopup.find('.popup-btn-true');
+let $cancelConfirmTodoBtn = $confirmTodoPopup.find('.popup-btn-false');
 
 let $createTodoPopup = $todosFeat.find('#popup-create-todo');
 let $newTodoTextInput = $createTodoPopup.find('input');
@@ -229,10 +229,10 @@ $confirmCreateTodoBtn.on('click', function(evt) {
 $cancelConfirmTodoBtn.on('click', function() {
   $confirmTodoPopup.addClass('d-none');
 })
-$confirmConfirmTodoBtn.on('click', function() {
-  confirmRemoveTodo();
-  $confirmTodoPopup.addClass('d-none');
-})
+// $confirmConfirmTodoBtn.on('click', function() {
+//   removeTodo();
+//   $confirmTodoPopup.addClass('d-none');
+// })
 
 
 function createTodoTemplate() {
@@ -246,7 +246,7 @@ function fillTodoTemplate(text, timeStamp, actuality, node) {
   if (actuality == 'done') $input.attr('checked', 'true');
   $input.attr('data-timestamp', timeStamp);
   $input.attr('data-actuality', actuality);
-  $(node).find('button').on('click', removeTodo);
+  $(node).find('button').on('click', confirmRemoveTodo); //removeTodo);
   $input.on('change', toggleTodoState)
   return node;
 }
@@ -291,18 +291,24 @@ function refreshTodosLists() {
 fillTodosLists();
 
 
-function removeTodo() {
-  let li = this.closest('li');
+function removeTodo(btn) {
+  let li = btn.closest('li');
   let input = li.querySelector('input');
   localStorage.removeItem(todosLocalStorageGroupKey + storageKeyDivider 
     + input.dataset.actuality + storageKeyDivider + input.dataset.timestamp);
   refreshTodosLists();
 }
 
-// function confirmRemoveTodo() {
-//   $confirmTodoPopup.removeClass('.d-none');
-//   removeTodo.bind(this);
-// }
+function confirmRemoveTodo() {
+  console.log(this);
+  let btn = this;
+  $confirmConfirmTodoBtn.on('click', function() {
+    console.log(btn);
+    removeTodo(btn);
+    $confirmTodoPopup.addClass('d-none');
+  })
+  $confirmTodoPopup.removeClass('d-none');
+}
 
 function toggleTodoState() {
   let actuality = this.dataset.actuality;
@@ -314,20 +320,3 @@ function toggleTodoState() {
     + (this.checked ? 'actual' : 'done') + storageKeyDivider + timestamp);
   refreshTodosLists();
 }
-
-// function moveTodoToDone() {
-//     $todosListDone.append(this.closest('li').cloneNode(true));
-//     this.closest('li').remove();
-// }
-// function moveTodoToActual() {
-//   $todosListActual.append(this.closest('li').cloneNode(true));
-//   this.closest('li').remove();
-// }
-
-
-// $todosRemoveBtns.on('click', removeTodo);
-
-// $todosCheckboxesActual.on('click', moveTodoToDone);
-// $todosCheckboxesDone.on('click', moveTodoToActual);
-
-// console.log($todosCheckboxesDone)
