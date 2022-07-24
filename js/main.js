@@ -110,7 +110,8 @@ $noteCreatePopup.find('.popup-btn-false').on('click', function () {
   $noteCreatePopup.addClass('d-none');
   $noteCreatePopup.find('input').val('');
 })
-$noteCreatePopup.find('.popup-btn-true').on('click', function () {
+$noteCreatePopup.find('.popup-btn-true').on('click', function (evt) {
+  evt.preventDefault();
   let noteName = $noteCreatePopup.find('input').val();
   if (noteName) {
     localStorage.setItem(storageKeyNotes + storageKeyDivider + noteName, '');
@@ -213,7 +214,8 @@ $cancelCreateTodoBtn.on('click', function() {
   $createTodoPopup.addClass('d-none');
   $newTodoTextInput.val('');
 })
-$confirmCreateTodoBtn.on('click', function() {
+$confirmCreateTodoBtn.on('click', function(evt) {
+  evt.preventDefault();
   let todoText = $newTodoTextInput.val();
   let data = new Date();
   let timeStampString = data.getTime().toString();
