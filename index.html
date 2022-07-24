@@ -34,12 +34,7 @@
             <div class="feat-slider__slide feat-slide">
               <div class="notes">
                 <ul class="notes__list">
-                  <!-- <li class="notes__item">
-                    <label class="notes__item-label">
-                      <input class="notes__item-input" type="radio" name="note" value="Note1">
-                      <span class="notes__item-span">Note 1</span>
-                    </label>
-                  </li> -->
+
                 </ul>
                 <div class="notes__btns">
                   <button id="notes-new" class="btn-m notes__btn">New</button>
@@ -87,7 +82,8 @@
             </div>
           </div>
 
-          <template id="template">
+          <template>
+             <!-- id="note-template"> -->
             <li class="notes__item">
               <label class="notes__item-label">
                 <input class="notes__item-input" type="radio" name="note" value="Note1">
@@ -103,49 +99,19 @@
           <div class="feat-slider__slides-row">
             <div class="feat-slider__slide feat-slide">
               <div class="todos">
-                <ul class="todos__list">
-                  <li class="todos__item todo">
-                    <label class="todo__checkbox-container">
-                      <input class="todo__checkbox" type="checkbox">
-                      <span class="todo__checkbox-span">V</span>
-                    </label>
-                    <span class="todo__text">ToDo 1</span>
-                    <button class="todo__done-btn">X</button>
-                  </li>
-                  <li class="todos__item todo">
-                    <label class="todo__checkbox-container">
-                      <input class="todo__checkbox" type="checkbox">
-                      <span class="todo__checkbox-span">V</span>
-                    </label>
-                    <span class="todo__text">ToDo 1</span>
-                    <button class="todo__done-btn">X</button>
-                  </li>
+                <ul class="todos__list todos__list-actual">
+
                 </ul>
                 <div>
-                  <button class="btn-m todos__to-done-btn">Добавить</button>
+                  <button class="btn-m todos__create-btn">Добавить</button>
                   <button class="btn-m todos__to-done-btn">Завершенные</button>
                 </div>
               </div>
             </div>
             <div class="feat-slider__slide feat-slide">
               <div class="todos">
-                <ul class="todos__list">
-                  <li class="todos__item todo">
-                    <div class="todo__checkbox-container">
-                      <input class="todo__checkbox" type="checkbox">
-                      <span class="todo__checkbox-span"></span>
-                    </div>
-                    <span class="todo__text">ToDo 1</span>
-                    <button class="todo__done-btn">X</button>
-                  </li>
-                  <li class="todos__item todo">
-                    <div class="todo__checkbox-container">
-                      <input class="todo__checkbox" type="checkbox">
-                      <span class="todo__checkbox-span"></span>
-                    </div>
-                    <span class="todo__text">ToDo 1</span>
-                    <button class="todo__done-btn">X</button>
-                  </li>
+                <ul class="todos__list todos__list-done">
+
                 </ul>
                 <div>
                   <button class="btn-m todos__to-actual-btn">Актуальные</button>
@@ -153,18 +119,45 @@
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="popup d-none" id="popup-confirmation-todos">
-          <div class="popup__banner">
-            <h2 class="popup__title">
-              Вы уверены?
-            </h2>
-            <div>
-              <button class="btn-m">Да</button>
-              <button class="btn-m">Нет</button>
+          <div class="popup d-none" id="popup-confirmation-todos">
+            <div class="popup__banner">
+              <h2 class="popup__title">
+                Вы уверены?
+              </h2>
+              <div>
+                <button class="btn-m popup-btn-true">Да</button>
+                <button class="btn-m popup-btn-false">Нет</button>
+              </div>
             </div>
           </div>
+
+          <div class="popup d-none" id="popup-create-todo">
+            <div class="popup__banner">
+              <h2 class="popup__title">
+                Введите текст записи
+              </h2>
+              <form action="" class="popup__form">
+                <input type="text" class="popup__input">
+                <div>
+                  <button class="btn-m popup-btn-true" type="submit">Создать</button>
+                  <button class="btn-m popup-btn-false" type="button">Отмена</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <template>
+            <li class="todos__item todo">
+              <label class="todo__checkbox-container">
+                <input class="todo__checkbox" type="checkbox" data-actuality="" data-timestamp="">
+                <span class="todo__checkbox-span">V</span>
+              </label>
+              <span class="todo__text"></span>
+              <button class="todo__remove-btn">X</button>
+            </li>
+          </template>
+
         </div>
         <!--конец внедрение фичи списка дел-->
 

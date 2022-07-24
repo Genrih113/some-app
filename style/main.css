@@ -293,7 +293,7 @@
   line-height: 1.25;
   color: var(--6-color);
 }
-.todo__done-btn {
+.todo__remove-btn {
   width: 24px;
   height: 24px;
   flex-shrink: 0;
