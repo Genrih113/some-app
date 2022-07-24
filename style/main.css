@@ -17,7 +17,7 @@
 
 *, ::before, ::after {
   box-sizing: border-box;
-  outline: 1px solid palevioletred;
+  /* outline: 1px solid palevioletred; */
 }
 
 
@@ -129,6 +129,9 @@
   display: flex;
   /* transform: translateX(0); */
   transition: transform 0.5s ease-in-out 0s;
+}
+.feat-slider__slides-row ul {
+  min-height: 40px;
 }
 .feat-slider__slide {
   flex-shrink: 0;
