@@ -15,10 +15,10 @@
       <div class="slider hm8">
         <nav class="slider__slides-row">
           <div class="slider__slide slide">
-            <button data-feat="notes" class="slide__button">Notes</button>
+            <button data-feat="notes" class="slide__button slider-button_selected">Записи</button>
           </div>
           <div class="slider__slide slide">
-            <button data-feat="todos" class="slide__button">ToDos</button>
+            <button data-feat="todos" class="slide__button">Список</button>
           </div>
         </nav>
       </div>
@@ -37,9 +37,9 @@
 
                 </ul>
                 <div class="notes__btns">
-                  <button id="notes-new" class="btn-m notes__btn">New</button>
-                  <button id="notes-open" class="btn-m notes__btn">Open</button>
-                  <button id="notes-remove" class="btn-m notes__btn">Remove</button>
+                  <button id="notes-new" class="btn-m notes__btn">Создать</button>
+                  <button id="notes-open" class="btn-m notes__btn">Открыть</button>
+                  <button id="notes-remove" class="btn-m notes__btn">Удалить</button>
                 </div>
               </div>
             </div>
@@ -48,8 +48,8 @@
               <div class="note">
                 <div class="note__text" contenteditable></div>
                 <div class="note__btns">
-                  <button id="note-save" class="btn-m note__btn">Save</button>
-                  <button id="note-cancel" class="btn-m note__btn">Cancel</button>
+                  <button id="note-save" class="btn-m note__btn">Сохранить</button>
+                  <button id="note-cancel" class="btn-m note__btn">Закрыть</button>
                 </div>
               </div>
             </div>
@@ -87,7 +87,7 @@
             <li class="notes__item">
               <label class="notes__item-label">
                 <input class="notes__item-input" type="radio" name="note" value="Note1">
-                <span class="notes__item-span">Note 1</span>
+                <span class="notes__item-span"></span>
               </label>
             </li>
           </template>
@@ -104,7 +104,7 @@
                 </ul>
                 <div>
                   <button class="btn-m todos__create-btn">Добавить</button>
-                  <button class="btn-m todos__to-done-btn">Завершенные</button>
+                  <button class="btn-m todos__to-done-btn">К завершенным</button>
                 </div>
               </div>
             </div>
@@ -114,7 +114,7 @@
 
                 </ul>
                 <div>
-                  <button class="btn-m todos__to-actual-btn">Актуальные</button>
+                  <button class="btn-m todos__to-actual-btn">К актуальным</button>
                 </div>
               </div>
             </div>
