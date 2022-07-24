@@ -30,8 +30,6 @@ $sliderBtns.on('click', moveSlidesRow);
 
 //переключение между фунционалом по клику на название фичи в хедере
 $slideBtns.on('click', function () {
-  console.log(this.dataset.feat);
-  console.log($featSliders);
   $slideBtns.removeClass('slider-button_selected');
   this.classList.add('slider-button_selected');
   $featSliders.filter(`:not(#${this.dataset.feat})`).fadeOut();
@@ -135,14 +133,11 @@ function getDataFromStorage(key, divider) {
   return dataArr;
 }
 
-// console.log(getDataFromStorage('notes', ':-:-:'));
-
 
 //заполнение списка записей на странице; создание-заполнение-вставка
 function createNotesListElTemplate() {
   let notesListEl = document.querySelector('#notes template')
     .content.querySelector('li').cloneNode(true);
-  // console.log(notesListEl);
   return notesListEl;
 }
 
@@ -154,10 +149,8 @@ function fillNotesListEl(text, node) {
 
 function pasteNotesListEl(node) {
   $notesList.append(node);
-  // console.log(node);
 }
 
-//pasteNotesListEl(fillNotesListEl('ghghghgh', createNotesListElTemplate()));
 
 function clearNotesList() {
   $notes.empty();
@@ -266,7 +259,6 @@ function getDataArrayFromLocalStorage(groupKey) {
       dataArr.push([...lsKey.split(storageKeyDivider), localStorage.getItem(lsKey)]);
     }
   }
-  console.log(dataArr);
   return dataArr;
 }
 
@@ -300,10 +292,8 @@ function removeTodo(btn) {
 }
 
 function confirmRemoveTodo() {
-  console.log(this);
   let btn = this;
   $confirmConfirmTodoBtn.on('click', function() {
-    console.log(btn);
     removeTodo(btn);
     $confirmTodoPopup.addClass('d-none');
   })
